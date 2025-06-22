@@ -5,16 +5,16 @@
 
 ## Kelompok [NAV TEAM]
 
-- **Nama:** Askhabul Nur Ardhiansyakh
-  **Kelas:** B
+- **Nama:** Askhabul Nur Ardhiansyakh  
+  **Kelas:** B  
   **NIM:** 1402024012
 
-- **Nama:** Muhammad Nur Akbar
-  **Kelas:** B 
+- **Nama:** Muhammad Nur Akbar  
+  **Kelas:** B  
   **NIM:** 1402024038
 
-- **Nama:** Viky Febriansyah 
-  **Kelas:** B
+- **Nama:** Viky Febriansyah  
+  **Kelas:** B  
   **NIM:** 1402024052
 
 ## Deskripsi
