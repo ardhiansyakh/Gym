@@ -193,8 +193,8 @@ public class Usermenu extends javax.swing.JFrame {
             user.nama = this.Username; 
             user.perpanjangPaket(Username, paketBaru);
 
-            String statusBaru = user.getTipeMemberById(id);
-            test2.setText("Member Tipe : " + statusBaru);
+            String statusBaru = user.getStatusMasaAktifDanHabisById(id);
+            test2.setText("Expired At : " + statusBaru);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -8,10 +8,22 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author Ardhiansyakh
+ */
 public class HargePaket {
 
+    /**
+     *
+     */
     public void HargePaket(){};
     
+    /**
+     *
+     * @param conn
+     * @param tabel
+     */
     public void ShowPrice(Connection conn, JTable tabel) {
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
@@ -52,6 +64,11 @@ public class HargePaket {
         }
     }
     
+    /**
+     *
+     * @param conn
+     * @param table
+     */
     public void UpdatePrice(Connection conn, JTable table) {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {

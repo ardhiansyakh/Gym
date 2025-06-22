@@ -16,14 +16,41 @@ interface UserService {
 }
 
 //superclass
+
+/**
+ *
+ * @author Ardhiansyakh
+ */
 public class User implements UserService { 
+
+    /**
+     *
+     */
     public int id;
+
+    /**
+     *
+     */
     public String nama;
+
+    /**
+     *
+     */
     public String role;
 
     // overloading
+
+    /**
+     *
+     */
     public User() {}
 
+    /**
+     *
+     * @param id
+     * @param nama
+     * @param role
+     */
     public User(int id, String nama, String role) {
         this.id = id;
         this.nama = nama;
@@ -31,6 +58,13 @@ public class User implements UserService {
     }
 
     // overide
+
+    /**
+     *
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public User login(String username, String password) {
         String query = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -71,6 +105,14 @@ public class User implements UserService {
         return null;
     }
 
+    /**
+     *
+     * @param nama
+     * @param password
+     * @param role
+     * @param paket
+     * @return
+     */
     @Override
     public boolean register(String nama, String password, String role, String paket) {
         if (nama.isEmpty() || password.isEmpty() || role.isEmpty() || paket.isEmpty()) {
@@ -124,6 +166,12 @@ public class User implements UserService {
     }
     
     //enkapsulasi
+
+    /**
+     *
+     * @param userId
+     * @return
+     */
     public String getTipeMemberById(int userId) {
         String sql = "SELECT paket FROM users WHERE id = ?";
         try (Connection conn = Database.getConnection();
@@ -141,6 +189,11 @@ public class User implements UserService {
         }
     }
    
+    /**
+     *
+     * @param userId
+     * @return
+     */
     public String getStatusMasaAktifDanHabisById(int userId) {
         String query = "SELECT waktu_habis FROM users WHERE id = ?";
         try (Connection conn = Database.getConnection();
@@ -161,6 +214,11 @@ public class User implements UserService {
         }
     }
     
+    /**
+     *
+     * @param username
+     * @param paketBaru
+     */
     public void perpanjangPaket(String username, String paketBaru) {
         String querySelect = "SELECT id, paket, waktu_habis FROM users WHERE username = ?";
         String queryUpdate = "UPDATE users SET paket = ?, waktu_habis = ? WHERE username = ?";
@@ -218,6 +276,11 @@ public class User implements UserService {
         }
     }
 
+    /**
+     *
+     * @param conn
+     * @param table
+     */
     public void ShowUsers(Connection conn, JTable table) {
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
@@ -255,6 +318,11 @@ public class User implements UserService {
         }
     }
 
+    /**
+     *
+     * @param conn
+     * @param table
+     */
     public void UpdateSelectedUserWithDialog(Connection conn, JTable table) {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -313,6 +381,11 @@ public class User implements UserService {
         }
     }
 
+    /**
+     *
+     * @param conn
+     * @param table
+     */
     public void deleteSelectedUser(Connection conn, JTable table) {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -347,6 +420,12 @@ public class User implements UserService {
         }
     }
     
+    /**
+     *
+     * @param conn
+     * @param table
+     * @param username
+     */
     public void ShowLogPerpanjangan(Connection conn, JTable table, String username) {
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][] {},
